@@ -47,7 +47,7 @@ public class AddUserFragment extends Fragment implements AddUserContract.View {
         v.findViewById(R.id.user_save).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mUserPresenter.saveUser();
             }
         });
         return v;

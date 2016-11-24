@@ -34,7 +34,18 @@ public class AddUserPresenter implements AddUserContract.Presenter {
 
     @Override
     public void saveUser() {
+        if(mUser != null) {
+            if(mView.getFirstName() == null || mView.getFirstName().trim().equals("") ||
+                    mView.getLastName() == null || mView.getLastName().trim().equals("")) {
+                mView.showUserNameIsRequired();
+            } else {
+                mUser.setFirstName(mView.getFirstName());
+                mUser.setLastName(mView.getLastName());
+                mUserRepository.save(mUser);
+                mView.showUserSavedMessage();
+            }
 
+        }
     }
 
     @Override
