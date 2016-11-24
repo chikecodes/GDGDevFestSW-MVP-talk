@@ -2,4 +2,7 @@
     <string name="app_name">GDGDevFestMVP</string>
     <string name="action_settings">Settings</string>
     <string name="save">Save</string>
+    <string name="user_not_found">User not found</string>
+    <string name="user_saved">User saved</string>
+    <string name="user_name_required_message">user name required</string>
 </resources>
