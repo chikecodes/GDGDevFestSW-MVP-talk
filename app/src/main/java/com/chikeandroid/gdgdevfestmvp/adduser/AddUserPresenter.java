@@ -19,7 +19,17 @@ public class AddUserPresenter implements AddUserContract.Presenter {
 
     @Override
     public void loadUserDetails() {
-
+        if(mView == null) {
+            throw new ViewNotFoundException();
+        }
+        int userId = mView.getUserId();
+        mUser = mUserRepository.getUser(userId);
+        if(mUser == null) {
+            mView.showUserNotFoundMessage();
+        } else {
+            mView.displayFirstName(mUser.getFirstName());
+            mView.displayLastName(mUser.getLastName());
+        }
     }
 
     @Override
@@ -30,6 +40,7 @@ public class AddUserPresenter implements AddUserContract.Presenter {
     @Override
     public void setView(AddUserFragment view) {
         this.mView = view;
+        loadUserDetails();
     }
 
 }
