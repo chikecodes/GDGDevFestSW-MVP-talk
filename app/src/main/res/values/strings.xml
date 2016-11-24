@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GDGDevFestMVP</string>
+    <string name="action_settings">Settings</string>
+    <string name="save">Save</string>
 </resources>
