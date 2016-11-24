@@ -92,8 +92,4 @@ public class AddUserFragment extends Fragment implements AddUserContract.View {
         Toast.makeText(getActivity(), R.string.user_name_required_message, Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void setPresenter(AddUserContract.Presenter presenter) {
-
-    }
 }

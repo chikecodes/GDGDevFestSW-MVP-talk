@@ -1,15 +1,12 @@
 package com.chikeandroid.gdgdevfestmvp.adduser;
 
-import com.chikeandroid.gdgdevfestmvp.BasePresenter;
-import com.chikeandroid.gdgdevfestmvp.BaseView;
-
 /**
  * Created by Chike on 11/24/2016.
  */
 
 public interface AddUserContract {
 
-    interface View extends BaseView<Presenter> {
+    interface View {
 
         int getUserId();
 
@@ -25,7 +22,10 @@ public interface AddUserContract {
         void showUserNameIsRequired();
     }
 
-    interface Presenter extends BasePresenter {
+    interface Presenter  {
 
+        void loadUserDetails();
+        void saveUser();
+        void setView(AddUserFragment view);
     }
 }
