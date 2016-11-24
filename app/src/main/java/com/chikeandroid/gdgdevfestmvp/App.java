@@ -8,9 +8,17 @@ import android.app.Application;
 
 public class App extends Application {
 
+    private AppComponent mComponent;
+
     @Override
     public void onCreate() {
         super.onCreate();
 
+        mComponent = DaggerAppComponent.builder().appModule(new AppModule()).build();
     }
+
+    public AppComponent getComponent() {
+        return  mComponent;
+    }
+
 }

@@ -9,7 +9,10 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.chikeandroid.gdgdevfestmvp.App;
 import com.chikeandroid.gdgdevfestmvp.R;
+
+import javax.inject.Inject;
 
 /**
  * Created by Chike on 11/24/2016.
@@ -17,10 +20,12 @@ import com.chikeandroid.gdgdevfestmvp.R;
 
 public class AddUserFragment extends Fragment implements AddUserContract.View {
 
+    @Inject AddUserPresenter mUserPresenter;
+
     private static final String USER_ID = "user_id";
 
-    private EditText firstNameEt;
-    private EditText lastNameEt;
+    private EditText mFirstNameEt;
+    private EditText nLastNameEt;
 
     public AddUserFragment() {
     }
@@ -28,6 +33,8 @@ public class AddUserFragment extends Fragment implements AddUserContract.View {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ((App)getActivity().getApplication()).getComponent().inject(this);
+
     }
 
     @Override
@@ -35,8 +42,8 @@ public class AddUserFragment extends Fragment implements AddUserContract.View {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_main, container, false);
 
-        firstNameEt = (EditText) v.findViewById(R.id.user_first_name);
-        lastNameEt = (EditText) v.findViewById(R.id.user_last_name);
+        mFirstNameEt = (EditText) v.findViewById(R.id.user_first_name);
+        nLastNameEt = (EditText) v.findViewById(R.id.user_last_name);
         v.findViewById(R.id.user_save).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,6 +56,7 @@ public class AddUserFragment extends Fragment implements AddUserContract.View {
     @Override
     public void onResume() {
         super.onResume();
+        mUserPresenter.setView(this);
     }
 
 
@@ -59,12 +67,12 @@ public class AddUserFragment extends Fragment implements AddUserContract.View {
 
     @Override
     public void displayFirstName(String name) {
-        firstNameEt.setText(name);
+        mFirstNameEt.setText(name);
     }
 
     @Override
     public void displayLastName(String name) {
-        lastNameEt.setText(name);
+        nLastNameEt.setText(name);
     }
 
     @Override
@@ -79,12 +87,12 @@ public class AddUserFragment extends Fragment implements AddUserContract.View {
 
     @Override
     public String getFirstName() {
-        return firstNameEt.getText().toString();
+        return mFirstNameEt.getText().toString();
     }
 
     @Override
     public String getLastName() {
-        return lastNameEt.getText().toString();
+        return nLastNameEt.getText().toString();
     }
 
     @Override
