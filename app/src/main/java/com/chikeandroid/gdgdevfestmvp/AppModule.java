@@ -1,6 +1,7 @@
 package com.chikeandroid.gdgdevfestmvp;
 
 import com.chikeandroid.gdgdevfestmvp.adduser.AddUserPresenter;
+import com.chikeandroid.gdgdevfestmvp.data.TodosAPI;
 import com.chikeandroid.gdgdevfestmvp.data.repository.InMemoryUserRepository;
 import com.chikeandroid.gdgdevfestmvp.data.repository.UserRepository;
 import com.chikeandroid.gdgdevfestmvp.todos.TodosPresenter;
@@ -31,4 +32,11 @@ public class AppModule {
     public TodosPresenter provideUsersPresenter() {
         return new TodosPresenter();
     }
+
+    @Provides
+    @Singleton
+    TodosAPI provideTodosApi() {
+        return new TodosAPI();
+    }
+
 }
