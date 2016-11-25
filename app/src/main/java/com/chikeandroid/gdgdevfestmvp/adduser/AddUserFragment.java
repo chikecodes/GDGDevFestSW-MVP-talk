@@ -22,7 +22,7 @@ import javax.inject.Inject;
 
 public class AddUserFragment extends Fragment implements AddUserContract.View {
 
-    @Inject AddUserPresenter mUserPresenter;
+    @Inject AddUserPresenter mAddUserPresenter;
 
     private static final String USER_ID = "user_id";
 
@@ -49,13 +49,13 @@ public class AddUserFragment extends Fragment implements AddUserContract.View {
         v.findViewById(R.id.btn_save).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mUserPresenter.saveUser();
+                mAddUserPresenter.saveUser();
             }
         });
         v.findViewById(R.id.btn_users).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mUserPresenter.onUsersButtonClick();
+                mAddUserPresenter.onUsersButtonClick();
             }
         });
         return v;
@@ -64,9 +64,8 @@ public class AddUserFragment extends Fragment implements AddUserContract.View {
     @Override
     public void onResume() {
         super.onResume();
-        mUserPresenter.setView(this);
+        mAddUserPresenter.setView(this);
     }
-
 
     @Override
     public int getUserId() {
