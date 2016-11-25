@@ -1,10 +1,10 @@
-package com.chikeandroid.gdgdevfestmvp.users;
+package com.chikeandroid.gdgdevfestmvp.todos;
 
 /**
  * Created by Chike on 11/25/2016.
  */
 
-public interface UsersContract {
+public interface TodosContract {
 
     interface View {
 
@@ -13,6 +13,6 @@ public interface UsersContract {
     interface Presenter  {
 
         void loadUsersFromAPI();
-        void setView(UsersFragment view);
+        void setView(TodosFragment view);
     }
 }

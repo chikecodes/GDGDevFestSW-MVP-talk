@@ -6,4 +6,5 @@
     <string name="user_saved">User saved</string>
     <string name="user_name_required_message">user name required</string>
     <string name="users">Users</string>
+    <string name="todos">Todos</string>
 </resources>

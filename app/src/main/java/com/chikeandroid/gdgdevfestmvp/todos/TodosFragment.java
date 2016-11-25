@@ -1,4 +1,4 @@
-package com.chikeandroid.gdgdevfestmvp.users;
+package com.chikeandroid.gdgdevfestmvp.todos;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,9 +16,10 @@ import javax.inject.Inject;
  * Created by Chike on 11/25/2016.
  */
 
-public class UsersFragment extends Fragment implements UsersContract.View {
+public class TodosFragment extends Fragment implements TodosContract.View {
 
-    @Inject UsersPresenter mUsersPresenter;
+    @Inject
+    TodosPresenter mTodosPresenter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class UsersFragment extends Fragment implements UsersContract.View {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_users, container, false);
+        View v = inflater.inflate(R.layout.fragment_todos, container, false);
 
 
         return v;
@@ -39,6 +40,6 @@ public class UsersFragment extends Fragment implements UsersContract.View {
     @Override
     public void onResume() {
         super.onResume();
-        mUsersPresenter.setView(this);
+        mTodosPresenter.setView(this);
     }
 }

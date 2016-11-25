@@ -1,4 +1,4 @@
-package com.chikeandroid.gdgdevfestmvp.users;
+package com.chikeandroid.gdgdevfestmvp.todos;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,12 +16,12 @@ import com.chikeandroid.gdgdevfestmvp.R;
  * Created by Chike on 11/25/2016.
  */
 
-public class UsersActivity extends AppCompatActivity {
+public class TodosActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_users);
+        setContentView(R.layout.activity_todos);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();

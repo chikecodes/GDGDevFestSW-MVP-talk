@@ -3,7 +3,7 @@ package com.chikeandroid.gdgdevfestmvp;
 import com.chikeandroid.gdgdevfestmvp.adduser.AddUserPresenter;
 import com.chikeandroid.gdgdevfestmvp.data.repository.InMemoryUserRepository;
 import com.chikeandroid.gdgdevfestmvp.data.repository.UserRepository;
-import com.chikeandroid.gdgdevfestmvp.users.UsersPresenter;
+import com.chikeandroid.gdgdevfestmvp.todos.TodosPresenter;
 
 import javax.inject.Singleton;
 
@@ -28,7 +28,7 @@ public class AppModule {
     }
 
     @Provides
-    public UsersPresenter provideUsersPresenter() {
-        return new UsersPresenter();
+    public TodosPresenter provideUsersPresenter() {
+        return new TodosPresenter();
     }
 }

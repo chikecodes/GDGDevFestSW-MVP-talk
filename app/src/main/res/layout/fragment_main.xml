@@ -32,6 +32,6 @@
             android:id="@+id/btn_users"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/users"/>
+            android:text="@string/todos"/>
 
 </LinearLayout>

@@ -1,7 +1,7 @@
 package com.chikeandroid.gdgdevfestmvp;
 
 import com.chikeandroid.gdgdevfestmvp.adduser.AddUserFragment;
-import com.chikeandroid.gdgdevfestmvp.users.UsersFragment;
+import com.chikeandroid.gdgdevfestmvp.todos.TodosFragment;
 
 import javax.inject.Singleton;
 
@@ -15,5 +15,5 @@ import dagger.Component;
 @Component(modules = { AppModule.class })
 public interface AppComponent {
     void inject(AddUserFragment target);
-    void inject(UsersFragment target);
+    void inject(TodosFragment target);
 }

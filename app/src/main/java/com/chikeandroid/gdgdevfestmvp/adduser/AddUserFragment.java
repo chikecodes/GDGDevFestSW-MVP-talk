@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.chikeandroid.gdgdevfestmvp.App;
 import com.chikeandroid.gdgdevfestmvp.R;
-import com.chikeandroid.gdgdevfestmvp.users.UsersActivity;
+import com.chikeandroid.gdgdevfestmvp.todos.TodosActivity;
 
 import javax.inject.Inject;
 
@@ -109,7 +109,7 @@ public class AddUserFragment extends Fragment implements AddUserContract.View {
 
     @Override
     public void launchUsersActivity() {
-        Intent i = new Intent(getActivity(), UsersActivity.class);
+        Intent i = new Intent(getActivity(), TodosActivity.class);
         startActivity(i);
     }
 
