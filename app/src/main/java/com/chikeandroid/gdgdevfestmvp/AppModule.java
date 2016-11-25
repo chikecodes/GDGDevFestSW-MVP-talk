@@ -29,14 +29,15 @@ public class AppModule {
     }
 
     @Provides
-    public TodosPresenter provideUsersPresenter() {
-        return new TodosPresenter();
-    }
-
-    @Provides
     @Singleton
     TodosAPI provideTodosApi() {
         return new TodosAPI();
     }
+
+    @Provides
+    public TodosPresenter provideUsersPresenter(TodosAPI todosApi) {
+        return new TodosPresenter(todosApi);
+    }
+
 
 }

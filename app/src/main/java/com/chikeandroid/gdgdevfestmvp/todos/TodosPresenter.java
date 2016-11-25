@@ -2,6 +2,9 @@ package com.chikeandroid.gdgdevfestmvp.todos;
 
 import com.chikeandroid.gdgdevfestmvp.data.TodosAPI;
 import com.chikeandroid.gdgdevfestmvp.data.model.Todo;
+import com.chikeandroid.gdgdevfestmvp.events.NewTodosEvent;
+
+import de.greenrobot.event.EventBus;
 
 import java.util.List;
 
@@ -31,7 +34,6 @@ public class TodosPresenter implements TodosContract.Presenter {
                 .subscribe(new Subscriber<List<Todo>>() {
                     @Override
                     public void onCompleted() {
-
                     }
 
                     @Override
@@ -40,8 +42,8 @@ public class TodosPresenter implements TodosContract.Presenter {
                     }
 
                     @Override
-                    public void onNext(List<Todo> todos) {
-
+                    public void onNext(List<Todo> newTodos) {
+                        EventBus.getDefault().post(new NewTodosEvent(newTodos));
                     }
                 });
     }
