@@ -1,5 +1,6 @@
 package com.chikeandroid.gdgdevfestmvp.adduser;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import com.chikeandroid.gdgdevfestmvp.App;
 import com.chikeandroid.gdgdevfestmvp.R;
+import com.chikeandroid.gdgdevfestmvp.users.UsersActivity;
 
 import javax.inject.Inject;
 
@@ -44,10 +46,16 @@ public class AddUserFragment extends Fragment implements AddUserContract.View {
 
         mFirstNameEt = (EditText) v.findViewById(R.id.user_first_name);
         nLastNameEt = (EditText) v.findViewById(R.id.user_last_name);
-        v.findViewById(R.id.user_save).setOnClickListener(new View.OnClickListener() {
+        v.findViewById(R.id.btn_save).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mUserPresenter.saveUser();
+            }
+        });
+        v.findViewById(R.id.btn_users).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mUserPresenter.onUsersButtonClick();
             }
         });
         return v;
@@ -98,6 +106,12 @@ public class AddUserFragment extends Fragment implements AddUserContract.View {
     @Override
     public void showUserNameIsRequired() {
         Toast.makeText(getActivity(), R.string.user_name_required_message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void launchUsersActivity() {
+        Intent i = new Intent(getActivity(), UsersActivity.class);
+        startActivity(i);
     }
 
 }

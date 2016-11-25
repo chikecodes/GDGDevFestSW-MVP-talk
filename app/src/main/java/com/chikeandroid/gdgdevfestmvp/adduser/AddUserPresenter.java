@@ -54,4 +54,9 @@ public class AddUserPresenter implements AddUserContract.Presenter {
         loadUserDetails();
     }
 
+    @Override
+    public void onUsersButtonClick() {
+        mView.launchUsersActivity();
+    }
+
 }

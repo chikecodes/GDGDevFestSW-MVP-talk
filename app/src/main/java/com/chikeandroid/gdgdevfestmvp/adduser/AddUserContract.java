@@ -20,6 +20,7 @@ public interface AddUserContract {
         String getLastName();
 
         void showUserNameIsRequired();
+        void launchUsersActivity();
     }
 
     interface Presenter  {
@@ -27,5 +28,6 @@ public interface AddUserContract {
         void loadUserDetails();
         void saveUser();
         void setView(AddUserFragment view);
+        void onUsersButtonClick();
     }
 }
