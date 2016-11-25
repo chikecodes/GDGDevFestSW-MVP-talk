@@ -12,7 +12,7 @@ public interface TodosContract {
 
     interface Presenter  {
 
-        void loadUsersFromAPI();
+        void loadTodosFromAPI();
         void setView(TodosFragment view);
     }
 }
