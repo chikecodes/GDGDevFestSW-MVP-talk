@@ -23,7 +23,7 @@ public class TodosAPI {
             .setEndpoint("http://jsonplaceholder.typicode.com")
             .build().create(TodoService.class).getTodoList().cache();
 
-    public Observable<List<Todo>> getPostsObservable() {
+    public Observable<List<Todo>> getTodosObservable() {
         return todosObservable;
     }
 

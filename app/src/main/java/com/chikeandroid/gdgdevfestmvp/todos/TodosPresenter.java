@@ -20,7 +20,7 @@ import rx.schedulers.Schedulers;
 
 public class TodosPresenter implements TodosContract.Presenter {
 
-    TodosAPI mTodosAPI;
+    public TodosAPI mTodosAPI;
     private TodosFragment mView;
 
     @Inject
@@ -30,7 +30,7 @@ public class TodosPresenter implements TodosContract.Presenter {
 
     @Override
     public void loadTodosFromAPI() {
-        mTodosAPI.getPostsObservable().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+        mTodosAPI.getTodosObservable().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<List<Todo>>() {
                     @Override
                     public void onCompleted() {

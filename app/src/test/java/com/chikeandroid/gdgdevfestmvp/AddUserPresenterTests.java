@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
  * Created by Chike on 11/24/2016.
  */
 
-public class PresenterTests {
+public class AddUserPresenterTests {
 
     UserRepository mMockUserRepository;
     AddUserFragment mMockView;
